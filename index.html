@@ -1,2 +1,734 @@
-Hello
+<!DOCTYPE html>
+<html>
 
+<head>
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        /*Background color*/
+        #grad1 {
+            background-color: #9C27B0;
+            background-image: linear-gradient(120deg, #FF4081, #81D4FA);
+        }
+
+        /*form styles*/
+        #msform {
+            text-align: center;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        #msform fieldset .form-card {
+            background: white;
+            border: 0 none;
+            border-radius: 0px;
+            box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+            padding: 20px 40px 30px 40px;
+            box-sizing: border-box;
+            width: 94%;
+            margin: 0 3% 20px 3%;
+
+            /*stacking fieldsets above each other*/
+            position: relative;
+        }
+
+        #msform fieldset {
+            background: white;
+            border: 0 none;
+            border-radius: 0.5rem;
+            box-sizing: border-box;
+            width: 100%;
+            margin: 0;
+            padding-bottom: 20px;
+
+            /*stacking fieldsets above each other*/
+            position: relative;
+        }
+
+        /*Hide all except first fieldset*/
+        #msform fieldset:not(:first-of-type) {
+            display: none;
+        }
+
+        #msform fieldset .form-card {
+            text-align: left;
+            color: #9E9E9E;
+        }
+
+        #msform input,
+        #msform textarea {
+            padding: 0px 8px 4px 8px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            border-radius: 0px;
+            margin-bottom: 25px;
+            margin-top: 2px;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: montserrat;
+            color: #2C3E50;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        #msform input:focus,
+        #msform textarea:focus {
+            -moz-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            border: none;
+            font-weight: bold;
+            border-bottom: 2px solid skyblue;
+            outline-width: 0;
+        }
+
+        /*Blue Buttons*/
+        #msform .action-button {
+            width: 100px;
+            background: skyblue;
+            font-weight: bold;
+            color: white;
+            border: 0 none;
+            border-radius: 0px;
+            cursor: pointer;
+            padding: 10px 5px;
+            margin: 10px 5px;
+        }
+
+        #msform .action-button:hover,
+        #msform .action-button:focus {
+            box-shadow: 0 0 0 2px white, 0 0 0 3px skyblue;
+        }
+
+        /*Previous Buttons*/
+        #msform .action-button-previous {
+            width: 100px;
+            background: #616161;
+            font-weight: bold;
+            color: white;
+            border: 0 none;
+            border-radius: 0px;
+            cursor: pointer;
+            padding: 10px 5px;
+            margin: 10px 5px;
+        }
+
+        #msform .action-button-previous:hover,
+        #msform .action-button-previous:focus {
+            box-shadow: 0 0 0 2px white, 0 0 0 3px #616161;
+        }
+
+        /*Home Buttons*/
+        #msform .action-button-home {
+            width: 100px;
+            background: #616161;
+            font-weight: bold;
+            color: white;
+            border: 0 none;
+            border-radius: 0px;
+            cursor: pointer;
+            padding: 10px 5px;
+            margin: 10px 5px;
+        }
+
+        #msform .action-button-home:hover,
+        #msform .action-button-home:focus {
+            box-shadow: 0 0 0 2px white, 0 0 0 3px #616161;
+        }
+
+            /*Compartilhar Buttons*/
+            #msform .action-button-compartilhar {
+            width: 100px;
+            background: #616161;
+            font-weight: bold;
+            color: white;
+            border: 0 none;
+            border-radius: 0px;
+            cursor: pointer;
+            padding: 10px 5px;
+            margin: 10px 5px;
+        }
+
+        #msform .action-button-compartilhar:hover,
+        #msform .action-button-compartilhar:focus {
+            box-shadow: 0 0 0 2px white, 0 0 0 3px #616161;
+        }
+
+        /*Dropdown List Exp Date*/
+        select.list-dt {
+            border: none;
+            outline: 0;
+            border-bottom: 1px solid #ccc;
+            padding: 2px 5px 3px 5px;
+            margin: 2px;
+        }
+
+        select.list-dt:focus {
+            border-bottom: 2px solid skyblue;
+        }
+
+        /*The background card*/
+        .card {
+            z-index: 0;
+            border: none;
+            border-radius: 0.5rem;
+            position: relative;
+        }
+
+        /*FieldSet headings*/
+        .fs-title {
+            font-size: 25px;
+            color: #2C3E50;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        /*progressbar*/
+        #progressbar {
+            margin-bottom: 30px;
+            overflow: hidden;
+            color: lightgrey;
+        }
+
+        #progressbar .active {
+            color: #000000;
+        }
+
+        #progressbar li {
+            list-style-type: none;
+            font-size: 12px;
+            width: 33.33333%;
+            float: left;
+            position: relative;
+        }
+
+        /*Icons in the ProgressBar*/
+        #progressbar #account:before {
+            font-family: FontAwesome;
+            content: "\f007";
+        }
+
+        #progressbar #ingredientes:before {
+            font-family: FontAwesome;
+            content: "\f013";
+        }
+
+        #progressbar #payment:before {
+            font-family: FontAwesome;
+            content: "\f013";
+        }
+
+        #progressbar #confirm:before {
+            font-family: FontAwesome;
+            content: "\f00c";
+        }
+
+        /*ProgressBar before any progress*/
+        #progressbar li:before {
+            width: 50px;
+            height: 50px;
+            line-height: 45px;
+            display: block;
+            font-size: 18px;
+            color: #ffffff;
+            background: lightgray;
+            border-radius: 50%;
+            margin: 0 auto 10px auto;
+            padding: 2px;
+        }
+
+        /*ProgressBar connectors*/
+        #progressbar li:after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: lightgray;
+            position: absolute;
+            left: 0;
+            top: 25px;
+            z-index: -1;
+        }
+
+        /*Color number of the step and the connector before it*/
+        #progressbar li.active:before,
+        #progressbar li.active:after {
+            background: skyblue;
+        }
+
+        /*Imaged Radio Buttons*/
+        .radio-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .radio {
+            display: inline-block;
+            width: 204;
+            height: 104;
+            border-radius: 0;
+            background: lightblue;
+            box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+            cursor: pointer;
+            margin: 8px 2px;
+        }
+
+        .radio:hover {
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .radio.selected {
+            box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /*Fit image in bootstrap div*/
+        .fit-image {
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- MultiStep Form -->
+    <div class="container-fluid" id="grad1">
+        <div class="row justify-content-center mt-0">
+            <div class="col-11 col-sm-9 col-md-7 col-lg-5 text-center p-0 mt-3 mb-2">
+                <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                    <h2><strong>Vamos montar a sua refeição!</strong></h2>
+                    <p>Preencha as informações abaixo para montarmos sua próxima refeição!</p>
+                    <div class="row">
+                        <div class="col-md-12 mx-0">
+                            <form id="msform">
+                                <!-- progressbar -->
+                                <ul id="progressbar">
+                                    <li class="active" id="account"><strong>Pessoal</strong></li>
+                                    <li id="ingredientes"><strong>Ingredientes</strong></li>
+                                    <li id="confirm"><strong>Finish</strong></li>
+                                </ul>
+                                <!-- fieldsets -->
+                                <fieldset>
+                                    <div class="form-card">
+                                        <h2 class="fs-title">Informações pessoais</h2>
+                                        <p><br></p>
+                                        <label>Nome</label></br>
+                                        <input type="text" name="uname" id="uname" />
+                                        <label>Tipo de Refeição</label></br>
+                                        <select class="list-dt" name="refeicao" id="refeicao">
+                                            <option value=""></option>
+                                            <option value="cafe">Café</option>
+                                            <option value="colacao">Colação</option>
+                                            <option value="almoco">Almoço</option>
+                                            <option value="lanche">Lanche</option>
+                                            <option value="jantar">Jantar</option>
+                                            <option value="ceia">Ceia</option>
+                                        </select>
+                                    </div>
+                                    <input type="button" name="next1" class="next1 action-button" value="Next Step" />
+                                </fieldset>
+                                <fieldset>
+                                    <div class="form-card">
+                                        <h2 class="fs-title">Selecione os itens desejados</h2>
+                                        <div id="divacucares">
+                                            <h4>Açúcares</h4><select class="list-dt" name="acucares" id="acucares">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div id="divcarboidratos">
+                                            <h4>Carboidratos</h4><select class="list-dt" name="carboidratos"
+                                                id="carboidratos">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div id="divcarnes">
+                                            <h4>Carnes</h4><select class="list-dt" name="carnes" id="carnes">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div id="divfeijoes">
+                                            <h4>Feijões</h4><select class="list-dt" name="feijoes" id="feijoes">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div id="divfrutas">
+                                            <h4>Frutas</h4><select class="list-dt" name="frutas" id="frutas">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div id="divgorduras">
+                                            <h4>Gorduras</h4><select class="list-dt" name="gorduras" id="gorduras">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div id="divlaticinios">
+                                            <h4>Laticínios</h4><select class="list-dt" name="laticinios"
+                                                id="laticinios">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div id="divverduras">
+                                            <h4>Verduras</h4><select class="list-dt" name="verduras" id="verduras">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <input type="button" name="previous" class="previous action-button-previous"
+                                        value="Home" />
+                                    <input type="button" name="next2" class="next2 action-button" value="Next Step" />
+                                </fieldset>
+                                <fieldset>
+                                    <div class="form-card">
+                                        <h2 class="fs-title text-center" id="finalname">Olá </h2>
+                                        <br><br>
+                                        <div class="row justify-content-center">
+                                            <div class="col-7 text-center">
+                                                <h5>Você configurou corretamente sua refeição! seguem os dados:</h5>
+                                            </div>
+                                        </div>
+                                        <br><br>
+                                        <div class="row justify-content-center">
+                                            <table class="table" id="tabelaProdutos">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Item</th>
+                                                        <th>Quantas porções</th>
+                                                        <th>Porção</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <br><br>
+                                        <div class="row justify-content-center">
+                                            <div class="col-12 text-left fs-title">
+                                                <h3>Lembre-se:</h3>
+                                                <h6>1. Não existe "dia do lixo" ... o cardápio tem que ser seguido à risca de segunda a segunda-feira</h6>
+                                                <h6>2. Observar sempre as quantidades especificadas em cada porção de alimento...</h6>
+                                                <h6>3. Atividade física é essencial para promover a perda de gordura e a manutenção da massa muscular!!!</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="button" name="home" class="home action-button-home" value="Home" />
+                                    <br>
+                                    <input type="button" name="compartilhar" class="compartilhar action-button-compartilhar" value="Enviar" />
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    let dados = ['acucares', 'carboidratos', 'carnes', 'feijoes', 'frutas', 'gorduras', 'laticinios', 'verduras'];
+    let cafe = { acucares: 0, carboidratos: 1, carnes: 0, feijoes: 0, frutas: 2, gorduras: 2, laticinios: 1, verduras: 0 };
+    let colacao = { acucares: 0, carboidratos: 0, carnes: 0, feijoes: 0, frutas: 2, gorduras: 0, laticinios: 0, verduras: 0 };
+    let almoco = { acucares: 1, carboidratos: 2, carnes: 4, feijoes: 4, frutas: 0, gorduras: 1, laticinios: 0, verduras: 10 };
+    let lanche = { acucares: 0, carboidratos: 2, carnes: 0, feijoes: 0, frutas: 1, gorduras: 1, laticinios: 0, verduras: 0 };
+    let jantar = { acucares: 0, carboidratos: 2, carnes: 3, feijoes: 4, frutas: 0, gorduras: 1, laticinios: 0, verduras: 10 };
+    let ceia = { acucares: 0, carboidratos: 0, carnes: 0, feijoes: 0, frutas: 1, gorduras: 0, laticinios: 1, verduras: 0 };
+
+    let acucares = [
+        { id: "0", tipo: "Chocolate amargo", quantidade: "4 quadradinhos(60g)" },
+        { id: "1", tipo: "Doce de mamão", quantidade: "2 colheres de sopa" },
+        { id: "2", tipo: "Geléia de frutas sem açúcar", quantidade: "1 colher de sopa" },
+        { id: "3", tipo: "Mel", quantidade: "1 colher de sobremesa" }
+    ];
+
+    let carboidratos = [
+        { id: "0", tipo: "Arroz cozido", quantidade: "4 colheres de sopa ou 2 de servir" },
+        { id: "1", tipo: "Batata cozida", quantidade: "1 unidade e meia" },
+        { id: "2", tipo: "Batata doce cozida", quantidade: "1 unidade" },
+        { id: "3", tipo: "Bisnaguinha sem glúten", quantidade: "3 unidades" },
+        { id: "4", tipo: "Cereal matinal", quantidade: "1 xícara de chá" },
+        { id: "5", tipo: "Farinha de mandioca", quantidade: "2 colheres de sopa" },
+        { id: "6", tipo: "Farinha de milho", quantidade: "2 colheres de sopa" },
+        { id: "7", tipo: "Inhame cozido", quantidade: "3 colheres e meia de sopa" },
+        { id: "8", tipo: "Macarrão cozido de arroz", quantidade: "3 colheres e meia de sopa" },
+        { id: "0", tipo: "Mandioca", quantidade: "4 colheres de sopa" },
+        { id: "10", tipo: "Milho verde", quantidade: "1 espiga" },
+        { id: "11", tipo: "Nhoque de batatas", quantidade: "3 colheres de sopa" },
+        { id: "12", tipo: "Pão de forma integral sem glúten", quantidade: "2 fatias" },
+        { id: "13", tipo: "Pão caseiro sem glúten", quantidade: "1 unidade" },
+        { id: "14", tipo: "Polenta cozida", quantidade: "3 colheres de sopa" },
+        { id: "15", tipo: "Torradas de arroz", quantidade: "4 unidades" },
+        { id: "16", tipo: "Tapioca", quantidade: "1 unidade" }
+    ];
+
+    let carnes = [
+        { id: "0", tipo: "Almôndegas assadas", quantidade: "4 unidades" },
+        { id: "1", tipo: "Atum", quantidade: "4 colheres de sopa" },
+        { id: "2", tipo: "Bife grelhado", quantidade: "1 unidade" },
+        { id: "3", tipo: "Carne assada", quantidade: "1 fatia pequena" },
+        { id: "4", tipo: "Carne cozida", quantidade: "3 pedaços pequenos" },
+        { id: "5", tipo: "Carne moída", quantidade: "4 colheres de sopa" },
+        { id: "6", tipo: "Filé de frango grelhado", quantidade: "1 unidade" },
+        { id: "7", tipo: "Hamburguer caseiro", quantidade: "1 unidade" },
+        { id: "8", tipo: "Lombo de porco assado", quantidade: "1 fatia pequena" },
+        { id: "9", tipo: "Ovo (cozido ou omelete simples)", quantidade: "2 unidades" },
+        { id: "10", tipo: "Peixe cozido", quantidade: "1 colher de servir" },
+        { id: "11", tipo: "Peixe grelhado", quantidade: "1 filé grande" },
+        { id: "12", tipo: "Sardinha fresca", quantidade: "1 unidade grande" },
+        { id: "13", tipo: "Sobrecoxa assada", quantidade: "1 unidade pequena" }
+    ];
+
+    let feijoes = [
+        { id: "0", tipo: "Ervilha cozida macerada", quantidade: "3 colheres de sopa" },
+        { id: "1", tipo: "Caldo de feijão cozido", quantidade: "1 concha ou 4 colheres de sopa" },
+        { id: "2", tipo: "Soja cozida", quantidade: "3 colheres de sopa" }
+    ];
+
+    let frutas = [
+        { id: "0", tipo: "Abacate", quantidade: "1/4 unidade" },
+        { id: "1", tipo: "Abacaxi", quantidade: "1 fatia" },
+        { id: "2", tipo: "Banana prata", quantidade: "1 unidade" },
+        { id: "3", tipo: "Caqui", quantidade: "1 unidade pequena" },
+        { id: "4", tipo: "Damasco seco", quantidade: "2 unidades" },
+        { id: "5", tipo: "Figo", quantidade: "2 unidades pequenas" },
+        { id: "6", tipo: "Kiwi", quantidade: "1 unidade" },
+        { id: "7", tipo: "Laranja pêra sem bagaço", quantidade: "1 unidade" },
+        { id: "8", tipo: "Maçã", quantidade: "1 unidade" },
+        { id: "9", tipo: "Mamão papaia", quantidade: "1/2 unidade" },
+        { id: "10", tipo: "Manga", quantidade: "1/2 unidade" },
+        { id: "11", tipo: "Melão", quantidade: "2 fatias pequenas" },
+        { id: "12", tipo: "Morango", quantidade: "10 unidades" },
+        { id: "13", tipo: "Pêra", quantidade: "1 unidade" },
+        { id: "14", tipo: "Pêssego", quantidade: "1 unidade grande" },
+        { id: "15", tipo: "Salada de frutas", quantidade: "1/2 xícara de chá" },
+        { id: "16", tipo: "Suco de frutas (puro)", quantidade: "1/2 copo (100ml)" },
+        { id: "17", tipo: "Uva fresca", quantidade: "10 unidades" },
+        { id: "18", tipo: "Uva passa", quantidade: "1 colher de sopa" }
+    ];
+
+    let gorduras = [
+        { id: "0", tipo: "Azeite de oliva", quantidade: "1 colher de sopa" },
+        { id: "1", tipo: "Maionese de abacate", quantidade: "1 colher de sopa" },
+        { id: "2", tipo: "Óleo vegetal canola ou linhaça", quantidade: "1 colher de sopa" }
+    ];
+
+    let laticinios = [
+        { id: "0", tipo: "Coalhada fresca", quantidade: "1 colher de sopa" },
+        { id: "1", tipo: "Iogurte desnatado", quantidade: "1 unidade (200ml)" },
+        { id: "2", tipo: "Leite", quantidade: "1 copo (200ml)" },
+        { id: "3", tipo: "Queijo minas frescal", quantidade: "1 fatia média" },
+        { id: "4", tipo: "Queijo tipo polenguinho", quantidade: "2 unidades" },
+        { id: "5", tipo: "Ricota", quantidade: "1 fatia grande" }
+    ];
+
+    let verduras = [
+        { id: "0", tipo: "Abobrinha cozida", quantidade: "1 colher e meia de sopa" },
+        { id: "1", tipo: "Acelga", quantidade: "à vontade" },
+        { id: "2", tipo: "Agrião", quantidade: "à vontade" },
+        { id: "3", tipo: "Alface", quantidade: "à vontade" },
+        { id: "4", tipo: "Almeirão", quantidade: "à vontade" },
+        { id: "5", tipo: "Beterraba cozida", quantidade: "3 fatias" },
+        { id: "6", tipo: "Beterraba crua", quantidade: "2 colheres de sopa" },
+        { id: "7", tipo: "Brócolis cozido", quantidade: "4 colheres de sopa" },
+        { id: "8", tipo: "Cenoura crua", quantidade: "1 colher de servir" },
+        { id: "9", tipo: "Chuchu cozido", quantidade: "2 colheres e meia de sopa" },
+        { id: "10", tipo: "Couve manteiga", quantidade: "6 colheres de sopa" },
+        { id: "11", tipo: "Espinafre cozido", quantidade: "2 colheres e meia de sopa" },
+        { id: "12", tipo: "Jiló cozido", quantidade: "1 colher e meia de sopa" },
+        { id: "13", tipo: "Pepino", quantidade: "4 colheres de sopa" },
+        { id: "14", tipo: "Repolho cru", quantidade: "6 colheres de sopa" },
+        { id: "15", tipo: "Rúcula", quantidade: "à vontade" },
+        { id: "16", tipo: "Tomate cereja", quantidade: "4 unidades" }
+    ];
+
+    $(document).ready(function () {
+
+        var current_fs, next_fs, previous_fs, home_fs; //fieldsets
+        var opacity;
+        let dadosRef;
+
+        $(".next1").click(function () {
+
+            // Identifica a refeição
+            dadosRef = document.getElementById("refeicao").value
+
+            if (dadosRef != '') {
+                current_fs = $(this).parent();
+                next_fs = $(this).parent().next();
+
+                //Add Class Active
+                $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+                //show the next fieldset
+                next_fs.show();
+                //hide the current fieldset with style
+                current_fs.animate({ opacity: 0 }, {
+                    step: function (now) {
+                        // for making fielset appear animation
+                        opacity = 1 - now;
+
+                        current_fs.css({
+                            'display': 'none',
+                            'position': 'relative'
+                        });
+                        next_fs.css({ 'opacity': opacity });
+                    },
+                    duration: 600
+                });
+
+                // Oculta os itens que não existem nessa refeição
+                for (let index = 0; index < dados.length; index++) {
+
+                    if (eval(dadosRef)[dados[index]] <= 0) {
+                        document.getElementById('div' + dados[index]).style.display = 'none';
+                    } else {
+                        // Alimenta os itens que possuem nessa refeição
+                        for (let index2 = 0; index2 < eval(dados[index]).length; index2++) {
+                            var opt = document.createElement('option');
+                            opt.value = eval(dados[index])[index2]['id'];
+                            opt.innerHTML = eval(dados[index])[index2]['tipo'];
+                            document.getElementById(dados[index]).appendChild(opt);
+                        }
+                    }
+                }
+            } else {
+                alert('Não selecionada a refeição');
+            }
+
+        });
+
+        $(".next2").click(function () {
+
+            let tmp = document.querySelectorAll('[id ^= "div"]');
+            let valid = true;
+
+            for (let index = 0; index < tmp.length; index++) {
+                if (tmp[index].style.display != 'none' && tmp[index].children[1].value == '' && valid == true) {
+                    valid = false
+                }
+            }
+
+            if (valid) {
+
+
+                var opt2 = document.createElement('label');
+                opt2.innerHTML = document.getElementById('uname').value;
+                document.getElementById('finalname').appendChild(opt2);
+
+                var table = document.getElementById("tabelaProdutos");
+
+                var row;
+                var cell1;
+                var cell2;
+                var cell3;
+
+                aLink = "https://api.whatsapp.com/send?text=*Olá " + document.getElementById('uname').value + "*%0A%0A,Segue sua refeição configurada:%0A"
+
+                for (let index = 0; index < tmp.length; index++) {
+                    if (tmp[index].children[1].value != '') {
+                        row = table.insertRow(table.rows.length);
+                        cell1 = row.insertCell(0);
+                        cell2 = row.insertCell(1);
+                        cell3 = row.insertCell(2);
+                        cell1.innerHTML = eval(tmp[index].children[1].name)[tmp[index].children[1].value].tipo;
+                        cell2.innerHTML = eval(dadosRef)[tmp[index].children[1].name] + (eval(dadosRef)[tmp[index].children[1].name] > 1 ? ' porções' : ' porção');
+                        cell3.innerHTML = eval(tmp[index].children[1].name)[tmp[index].children[1].value].quantidade;
+
+                        aLink += eval(dadosRef)[tmp[index].children[1].name] + (eval(dadosRef)[tmp[index].children[1].name] > 1 ? ' porções' : ' porção');
+                        aLink += " de ";
+                        aLink += eval(tmp[index].children[1].name)[tmp[index].children[1].value].tipo;
+                        aLink += ", sendo que " + eval(dadosRef)[tmp[index].children[1].name] + (eval(dadosRef)[tmp[index].children[1].name] > 1 ? ' porções' : ' porção') + " equivale a: ";
+                        aLink += eval(tmp[index].children[1].name)[tmp[index].children[1].value].quantidade;
+                    }
+                }
+                
+                current_fs = $(this).parent();
+                next_fs = $(this).parent().next();
+
+                //Add Class Active
+                $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+                //show the next fieldset
+                next_fs.show();
+                //hide the current fieldset with style
+                current_fs.animate({ opacity: 0 }, {
+                    step: function (now) {
+                        // for making fielset appear animation
+                        opacity = 1 - now;
+
+                        current_fs.css({
+                            'display': 'none',
+                            'position': 'relative'
+                        });
+                        next_fs.css({ 'opacity': opacity });
+                    },
+                    duration: 600
+                });
+            } else {
+                alert('Algum campo não preenchido')
+            }
+        });
+
+        $(".previous").click(function () {
+            window.location.href = 'index.html'
+            // current_fs = $(this).parent();
+            // previous_fs = $(this).parent().prev();
+
+            // //Remove class active
+            // $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+            // //show the previous fieldset
+            // previous_fs.show();
+
+            // //hide the current fieldset with style
+            // current_fs.animate({ opacity: 0 }, {
+            //     step: function (now) {
+            //         // for making fielset appear animation
+            //         opacity = 1 - now;
+
+            //         current_fs.css({
+            //             'display': 'none',
+            //             'position': 'relative'
+            //         });
+            //         previous_fs.css({ 'opacity': opacity });
+            //     },
+            //     duration: 600
+            // });
+        });
+
+        $(".home").click(function () {
+            window.location.href = 'index.html'
+        });
+
+        $(".compartilhar").click(function () {
+            window.location.href = aLink
+        });
+        
+
+        $('.radio-group .radio').click(function () {
+            $(this).parent().find('.radio').removeClass('selected');
+            $(this).addClass('selected');
+        });
+
+        $(".submit").click(function () {
+            return false;
+        })
+
+    });
+
+</script>
+
+</html>
