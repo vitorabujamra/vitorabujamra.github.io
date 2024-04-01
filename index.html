@@ -635,7 +635,7 @@
                 var cell2;
                 var cell3;
 
-                aLink = "https://api.whatsapp.com/send?text=*Olá " + document.getElementById('uname').value + "*%0A%0A,Segue sua refeição configurada:%0A"
+                aLink = "https://api.whatsapp.com/send?text=*Olá " + document.getElementById('uname').value + ",*%0A%0ASegue sua refeição configurada:%0A%0A"
 
                 for (let index = 0; index < tmp.length; index++) {
                     if (tmp[index].children[1].value != '') {
@@ -647,13 +647,24 @@
                         cell2.innerHTML = eval(dadosRef)[tmp[index].children[1].name] + (eval(dadosRef)[tmp[index].children[1].name] > 1 ? ' porções' : ' porção');
                         cell3.innerHTML = eval(tmp[index].children[1].name)[tmp[index].children[1].value].quantidade;
 
+                        aLink += "*- ";
                         aLink += eval(dadosRef)[tmp[index].children[1].name] + (eval(dadosRef)[tmp[index].children[1].name] > 1 ? ' porções' : ' porção');
-                        aLink += " de ";
+                        aLink += "* de ";
                         aLink += eval(tmp[index].children[1].name)[tmp[index].children[1].value].tipo;
-                        aLink += ", sendo que " + eval(dadosRef)[tmp[index].children[1].name] + (eval(dadosRef)[tmp[index].children[1].name] > 1 ? ' porções' : ' porção') + " equivale a: ";
+                        aLink += ", sendo que " + eval(dadosRef)[tmp[index].children[1].name] + (eval(dadosRef)[tmp[index].children[1].name] > 1 ? ' porções' : ' porção') + " equivale a: *";
                         aLink += eval(tmp[index].children[1].name)[tmp[index].children[1].value].quantidade;
+                        aLink += "*%0A";
                     }
                 }
+                
+                aLink += "%0A";
+                aLink += "%0A";
+                aLink += "%0A";
+                aLink += "*Lembre-se:*%0A";
+                aLink += "1. Não existe `dia do lixo` ... o cardápio tem que ser seguido à risca de segunda a segunda-feira%0A";
+                aLink += "2. Observar sempre as quantidades especificadas em cada porção de alimento...%0A";
+                aLink += "3. Atividade física é essencial para promover a perda de gordura e a manutenção da massa muscular!!!%0A";
+
                 
                 current_fs = $(this).parent();
                 next_fs = $(this).parent().next();
