@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        /*Background color*/
+        #grad1 {
+            background-color: #0e8aa0;
+            background-image: linear-gradient(120deg, #1a4297, #81D4FA);
+        }
+
+        /*form styles*/
+        #msform {
+            text-align: center;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        #msform fieldset .form-card {
+            background: white;
+            border: 0 none;
+            border-radius: 0px;
+            box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+            padding: 20px 40px 30px 40px;
+            box-sizing: border-box;
+            width: 94%;
+            margin: 0 3% 20px 3%;
+
+            /*stacking fieldsets above each other*/
+            position: relative;
+        }
+
+        .inline-fields {
+            display: flex;
+            gap: 1px;
+            /* Espaçamento horizontal entre os elementos */
+            align-items: center;
+            /* Alinha verticalmente os elementos no centro */
+        }
+
+        .inline-fields label {
+            margin-right: 5px;
+            /* Espaço entre o label e o input */
+        }
+
+        #msform fieldset {
+            background: white;
+            border: 0 none;
+            border-radius: 0.5rem;
+            box-sizing: border-box;
+            width: 100%;
+            margin: 0;
+            padding-bottom: 20px;
+
+            /*stacking fieldsets above each other*/
+            position: relative;
+        }
+
+        /*Hide all except first fieldset*/
+        #msform fieldset:not(:first-of-type) {
+            display: none;
+        }
+
+        #msform fieldset .form-card {
+            text-align: left;
+            color: #9E9E9E;
+        }
+
+        #msform input,
+        #msform textarea {
+            padding: 0px 8px 4px 8px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            border-radius: 0px;
+            margin-bottom: 25px;
+            margin-top: 2px;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: montserrat;
+            color: #2C3E50;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        #msform input:focus,
+        #msform textarea:focus {
+            -moz-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            border: none;
+            font-weight: bold;
+            border-bottom: 2px solid skyblue;
+            outline-width: 0;
+        }
+
+        /*Blue Buttons*/
+        #msform .action-button {
+            width: 100px;
+            background: skyblue;
+            font-weight: bold;
+            color: white;
+            border: 0 none;
+            border-radius: 0px;
+            cursor: pointer;
+            padding: 10px 5px;
+            margin: 10px 5px;
+        }
+
+        #msform .action-button:hover,
+        #msform .action-button:focus {
+            box-shadow: 0 0 0 2px white, 0 0 0 3px skyblue;
+        }
+
+        /*Previous Buttons*/
+        #msform .action-button-previous {
+            width: 100px;
+            background: #616161;
+            font-weight: bold;
+            color: white;
+            border: 0 none;
+            border-radius: 0px;
+            cursor: pointer;
+            padding: 10px 5px;
+            margin: 10px 5px;
+        }
+
+        #msform .action-button-previous:hover,
+        #msform .action-button-previous:focus {
+            box-shadow: 0 0 0 2px white, 0 0 0 3px #616161;
+        }
+
+        /*Home Buttons*/
+        #msform .action-button-home {
+            width: 100px;
+            background: #616161;
+            font-weight: bold;
+            color: white;
+            border: 0 none;
+            border-radius: 0px;
+            cursor: pointer;
+            padding: 10px 5px;
+            margin: 10px 5px;
+        }
+
+        #msform .action-button-home:hover,
+        #msform .action-button-home:focus {
+            box-shadow: 0 0 0 2px white, 0 0 0 3px #616161;
+        }
+
+        /*Compartilhar Buttons*/
+        #msform .action-button-compartilhar {
+            width: 100px;
+            background: #616161;
+            font-weight: bold;
+            color: white;
+            border: 0 none;
+            border-radius: 0px;
+            cursor: pointer;
+            padding: 10px 5px;
+            margin: 10px 5px;
+        }
+
+        #msform .action-button-compartilhar:hover,
+        #msform .action-button-compartilhar:focus {
+            box-shadow: 0 0 0 2px white, 0 0 0 3px #616161;
+        }
+
+        /*Dropdown List Exp Date*/
+        select.list-dt {
+            border: none;
+            outline: 0;
+            border-bottom: 1px solid #ccc;
+            padding: 2px 5px 3px 5px;
+            margin: 2px;
+        }
+
+        select.list-dt:focus {
+            border-bottom: 2px solid skyblue;
+        }
+
+        /*The background card*/
+        .card {
+            z-index: 0;
+            border: none;
+            border-radius: 0.5rem;
+            position: relative;
+        }
+
+        /*FieldSet headings*/
+        .fs-title {
+            font-size: 25px;
+            color: #2C3E50;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        /*progressbar*/
+        #progressbar {
+            margin-bottom: 30px;
+            overflow: hidden;
+            color: lightgrey;
+        }
+
+        #progressbar .active {
+            color: #000000;
+        }
+
+        #progressbar li {
+            list-style-type: none;
+            font-size: 12px;
+            width: 100%;
+            float: left;
+            position: relative;
+        }
+
+        /*Icons in the ProgressBar*/
+        #progressbar #account:before {
+            font-family: FontAwesome;
+            content: "\f007";
+        }
+
+        #progressbar #ingredientes:before {
+            font-family: FontAwesome;
+            content: "\f013";
+        }
+
+        #progressbar #payment:before {
+            font-family: FontAwesome;
+            content: "\f013";
+        }
+
+        #progressbar #confirm:before {
+            font-family: FontAwesome;
+            content: "\f00c";
+        }
+
+        /*ProgressBar before any progress*/
+        #progressbar li:before {
+            width: 50px;
+            height: 50px;
+            line-height: 45px;
+            display: block;
+            font-size: 18px;
+            color: #ffffff;
+            background: lightgray;
+            border-radius: 50%;
+            margin: 0 auto 10px auto;
+            padding: 2px;
+        }
+
+        /*ProgressBar connectors*/
+        #progressbar li:after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: lightgray;
+            position: absolute;
+            left: 0;
+            top: 25px;
+            z-index: -1;
+        }
+
+        /*Color number of the step and the connector before it*/
+        #progressbar li.active:before,
+        #progressbar li.active:after {
+            background: skyblue;
+        }
+
+        /*Imaged Radio Buttons*/
+        .radio-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .radio {
+            display: inline-block;
+            width: 204;
+            height: 104;
+            border-radius: 0;
+            background: lightblue;
+            box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+            cursor: pointer;
+            margin: 8px 2px;
+        }
+
+        .radio:hover {
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .radio.selected {
+            box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /*Fit image in bootstrap div*/
+        .fit-image {
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- MultiStep Form -->
+    <div class="container-fluid" id="grad1">
+        <div class="row justify-content-center mt-0">
+            <div class="col-11 col-sm-9 col-md-11 col-lg-5 text-center p-0 mt-3 mb-2">
+                <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                    <h2><strong>Cadastro de usuário</strong></h2>
+                    <p>Preencha as informações abaixo para cadastrar um usuário. </br>Lembrando que essa funcionalidade
+                        só funciona localmente</p>
+                    <div class="row">
+                        <div class="col-md-12 mx-0">
+                            <form id="msform">
+                                <!-- progressbar -->
+                                <ul id="progressbar">
+                                    <li class="active" id="account"><strong></strong></li>
+                                </ul>
+                                <!-- fieldsets -->
+                                <fieldset>
+                                    <div class="form-card">
+                                        <div class="inline-fields">
+                                            <label for="nome">Nome:</label>
+                                            <input type="text" id="nome" name="nome">
+                                            <label for="id">Iniciais:</label>
+                                            <input type="text" id="id" name="id">
+                                        </div>
+
+                                        <br><br>
+
+                                        <!-- Campos de cada refeição -->
+                                        <h3>Café da Manhã</h3>
+                                        <div class="inline-fields">
+                                            <label>Açúcares:</label>
+                                            <input type="number" value="0" name="cafe[acucares]" required><br>
+                                            <label>Carboidratos:</label>
+                                            <input type="number" value="0" name="cafe[carboidratos]" required><br>
+                                            <label>Carnes:</label>
+                                            <input type="number" value="0" name="cafe[carnes]" required><br>
+                                            <label>Feijões:</label>
+                                            <input type="number" value="0" name="cafe[feijoes]" required><br>
+                                        </div>
+                                        <div class="inline-fields">
+                                            <label>Frutas:</label>
+                                            <input type="number" value="0" name="cafe[frutas]" required><br>
+                                            <label>Gorduras:</label>
+                                            <input type="number" value="0" name="cafe[gorduras]" required><br>
+                                            <label>Laticínios:</label>
+                                            <input type="number" value="0" name="cafe[laticinios]" required><br>
+                                            <label>Verduras:</label>
+                                            <input type="number" value="0" name="cafe[verduras]" required><br>
+                                        </div>
+                                        <hr>
+
+                                        <!-- Campos de cada refeição -->
+                                        <h3>Colação</h3>
+                                        <div class="inline-fields">
+                                            <label>Açúcares:</label>
+                                            <input type="number" value="0" name="colacao[acucares]" required><br>
+                                            <label>Carboidratos:</label>
+                                            <input type="number" value="0" name="colacao[carboidratos]" required><br>
+                                            <label>Carnes:</label>
+                                            <input type="number" value="0" name="colacao[carnes]" required><br>
+                                            <label>Feijões:</label>
+                                            <input type="number" value="0" name="colacao[feijoes]" required><br>
+                                        </div>
+                                        <div class="inline-fields">
+                                            <label>Frutas:</label>
+                                            <input type="number" value="0" name="colacao[frutas]" required><br>
+                                            <label>Gorduras:</label>
+                                            <input type="number" value="0" name="colacao[gorduras]" required><br>
+                                            <label>Laticínios:</label>
+                                            <input type="number" value="0" name="colacao[laticinios]" required><br>
+                                            <label>Verduras:</label>
+                                            <input type="number" value="0" name="colacao[verduras]" required><br>
+                                        </div>
+                                        <hr>
+
+                                        <!-- Campos de cada refeição -->
+                                        <h3>Almoço</h3>
+                                        <div class="inline-fields">
+                                            <label>Açúcares:</label>
+                                            <input type="number" value="0" name="almoco[acucares]" required><br>
+                                            <label>Carboidratos:</label>
+                                            <input type="number" value="0" name="almoco[carboidratos]" required><br>
+                                            <label>Carnes:</label>
+                                            <input type="number" value="0" name="almoco[carnes]" required><br>
+                                            <label>Feijões:</label>
+                                            <input type="number" value="0" name="almoco[feijoes]" required><br>
+                                        </div>
+                                        <div class="inline-fields">
+                                            <label>Frutas:</label>
+                                            <input type="number" value="0" name="almoco[frutas]" required><br>
+                                            <label>Gorduras:</label>
+                                            <input type="number" value="0" name="almoco[gorduras]" required><br>
+                                            <label>Laticínios:</label>
+                                            <input type="number" value="0" name="almoco[laticinios]" required><br>
+                                            <label>Verduras:</label>
+                                            <input type="number" value="0" name="almoco[verduras]" required><br>
+                                        </div>
+                                        <hr>
+
+                                        <!-- Campos de cada refeição -->
+                                        <h3>Lanche</h3>
+                                        <div class="inline-fields">
+                                            <label>Açúcares:</label>
+                                            <input type="number" value="0" name="lanche[acucares]" required><br>
+                                            <label>Carboidratos:</label>
+                                            <input type="number" value="0" name="lanche[carboidratos]" required><br>
+                                            <label>Carnes:</label>
+                                            <input type="number" value="0" name="lanche[carnes]" required><br>
+                                            <label>Feijões:</label>
+                                            <input type="number" value="0" name="lanche[feijoes]" required><br>
+                                        </div>
+                                        <div class="inline-fields">
+                                            <label>Frutas:</label>
+                                            <input type="number" value="0" name="lanche[frutas]" required><br>
+                                            <label>Gorduras:</label>
+                                            <input type="number" value="0" name="lanche[gorduras]" required><br>
+                                            <label>Laticínios:</label>
+                                            <input type="number" value="0" name="lanche[laticinios]" required><br>
+                                            <label>Verduras:</label>
+                                            <input type="number" value="0" name="lanche[verduras]" required><br>
+                                        </div>
+                                        <hr>
+
+                                        <!-- Campos de cada refeição -->
+                                        <h3>Jantar</h3>
+                                        <div class="inline-fields">
+                                            <label>Açúcares:</label>
+                                            <input type="number" value="0" name="jantar[acucares]" required><br>
+                                            <label>Carboidratos:</label>
+                                            <input type="number" value="0" name="jantar[carboidratos]" required><br>
+                                            <label>Carnes:</label>
+                                            <input type="number" value="0" name="jantar[carnes]" required><br>
+                                            <label>Feijões:</label>
+                                            <input type="number" value="0" name="jantar[feijoes]" required><br>
+                                        </div>
+                                        <div class="inline-fields">
+                                            <label>Frutas:</label>
+                                            <input type="number" value="0" name="jantar[frutas]" required><br>
+                                            <label>Gorduras:</label>
+                                            <input type="number" value="0" name="jantar[gorduras]" required><br>
+                                            <label>Laticínios:</label>
+                                            <input type="number" value="0" name="jantar[laticinios]" required><br>
+                                            <label>Verduras:</label>
+                                            <input type="number" value="0" name="jantar[verduras]" required><br>
+                                        </div>
+                                        <hr>
+
+                                        <!-- Campos de cada refeição -->
+                                        <h3>Ceia</h3>
+                                        <div class="inline-fields">
+                                            <label>Açúcares:</label>
+                                            <input type="number" value="0" name="ceia[acucares]" required><br>
+                                            <label>Carboidratos:</label>
+                                            <input type="number" value="0" name="ceia[carboidratos]" required><br>
+                                            <label>Carnes:</label>
+                                            <input type="number" value="0" name="ceia[carnes]" required><br>
+                                            <label>Feijões:</label>
+                                            <input type="number" value="0" name="ceia[feijoes]" required><br>
+                                        </div>
+                                        <div class="inline-fields">
+                                            <label>Frutas:</label>
+                                            <input type="number" value="0" name="ceia[frutas]" required><br>
+                                            <label>Gorduras:</label>
+                                            <input type="number" value="0" name="ceia[gorduras]" required><br>
+                                            <label>Laticínios:</label>
+                                            <input type="number" value="0" name="ceia[laticinios]" required><br>
+                                            <label>Verduras:</label>
+                                            <input type="number" value="0" name="ceia[verduras]" required><br>
+                                        </div>
+                                        <hr>
+
+                                        <h2>Grupos Alimentares</h2>
+                                        <h6>Itens devem ser preenchidos linha a linha com a descrição e a quantidade
+                                            separadas por vírgula</h6><br><br>
+                                        <!-- Para cada grupo alimentar, incluímos uma caixa de texto para entrada de itens -->
+                                        <label for="acucares">Açúcares:</label><br>
+                                        <textarea id="acucares" name="gruposAlimentares[acucares]"
+                                            rows="4"></textarea><br>
+                                        <label for="carboidrat">Carboidratos:</label><br>
+                                        <textarea id="carboidrato" name="gruposAlimentares[carboidratos]"
+                                            rows="4"></textarea><br>
+                                        <label for="carnes">Carnes:</label><br>
+                                        <textarea id="carnes" name="gruposAlimentares[carnes]" rows="4"></textarea><br>
+                                        <label for="feijoes">Feijões:</label><br>
+                                        <textarea id="feijoes" name="gruposAlimentares[feijoes]"
+                                            rows="4"></textarea><br>
+                                        <label for="frutas">Frutas:</label><br>
+                                        <textarea id="frutas" name="gruposAlimentares[frutas]" rows="4"></textarea><br>
+                                        <label for="gorduras">Gorduras:</label><br>
+                                        <textarea id="gorduras" name="gruposAlimentares[gorduras]"
+                                            rows="4"></textarea><br>
+                                        <label for="laticinios">Laticínios:</label><br>
+                                        <textarea id="laticinios" name="gruposAlimentares[laticinios]"
+                                            rows="4"></textarea><br>
+                                        <label for="verduras">Verduras:</label><br>
+                                        <textarea id="verduras" name="gruposAlimentares[verduras]"
+                                            rows="4"></textarea><br>
+                                    </div>
+                                    <input type="button" name="previous" class="previous action-button-previous"
+                                        value="Home" />
+                                    <button type="submit" class="action-button">Enviar</button>
+                                </fieldset>
+                            </form>
+                            <script>
+                                document.getElementById("msform").addEventListener("submit", function (event) {
+                                    event.preventDefault(); // Previne o envio padrão do formulário
+
+                                    // Captura os dados do formulário
+                                    const formData = new FormData(event.target);
+                                    const data = {
+                                        id: formData.get("id"),
+                                        nome: formData.get("nome"),
+                                        refeicoes: {},
+                                        gruposAlimentares: {}
+                                    };
+
+                                    // Processa cada refeição
+                                    ["cafe", "colacao", "almoco", "lanche", "jantar", "ceia"].forEach(refeicao => {
+                                        data.refeicoes[refeicao] = {
+                                            acucares: parseInt(formData.get(`${refeicao}[acucares]`)),
+                                            carboidratos: parseInt(formData.get(`${refeicao}[carboidratos]`)),
+                                            carnes: parseInt(formData.get(`${refeicao}[carnes]`)),
+                                            feijoes: parseInt(formData.get(`${refeicao}[feijoes]`)),
+                                            frutas: parseInt(formData.get(`${refeicao}[frutas]`)),
+                                            gorduras: parseInt(formData.get(`${refeicao}[gorduras]`)),
+                                            laticinios: parseInt(formData.get(`${refeicao}[laticinios]`)),
+                                            verduras: "à vontade",
+                                        };
+                                    });
+
+                                    // Preenche os grupos alimentares
+                                    const grupos = ["acucares", "carboidratos", "carnes", "feijoes", "frutas", "gorduras", "laticinios", "verduras"];
+
+                                    grupos.forEach(grupo => {
+                                        let items = [];
+
+                                        // Adiciona o elemento inicial
+                                        items.push({
+                                            id: 0,
+                                            tipo: "",
+                                            quantidade: ""
+                                        });
+
+                                        // Captura os dados do grupo, considerando que o usuário pode ter preenchido múltiplas linhas
+                                        let itemData = formData.get(`gruposAlimentares[${grupo}]`);
+                                        if (itemData) {
+                                            // Divide as linhas
+                                            const linhas = itemData.split("\n");
+
+                                            // Preenche os dados adicionais, se existirem
+                                            linhas.forEach((linha, index) => {
+                                                let [tipo, quantidade] = linha.split(",").map(v => v.trim());
+                                                if (tipo && quantidade) {
+                                                    items.push({
+                                                        id: index + 1,
+                                                        tipo: tipo,
+                                                        quantidade: quantidade
+                                                    });
+                                                }
+                                            });
+                                        }
+
+                                        // Se não houver dados adicionais, mantém apenas o item inicial
+                                        if (items.length === 1) {
+                                            items[0].tipo = ""; // Ou outro valor padrão se necessário
+                                        }
+
+                                        // Adiciona os items ao grupo alimentar
+                                        data.gruposAlimentares[grupo] = items;
+                                    });
+
+                                    // Armazena os dados no localStorage
+                                    localStorage.setItem('formData', JSON.stringify(data));
+
+                                    // Redireciona para a página de resultados
+                                    window.location.href = 'result.html';
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

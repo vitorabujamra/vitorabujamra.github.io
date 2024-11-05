@@ -345,6 +345,8 @@
                                             <option value="ceia">Ceia</option>
                                         </select>
                                     </div>
+                                    <a href="cadUser.html" type="button" name="cadUser"
+                                        class="action-button">Cadastro</a>
                                     <input type="button" name="next1" class="next1 action-button" value="Next Step" />
                                 </fieldset>
                                 <fieldset>
@@ -470,6 +472,7 @@
     let lanche = { acucares: 0, carboidratos: 0, carnes: 0, feijoes: 0, frutas: 0, gorduras: 0, laticinios: 0, verduras: 0 };
     let jantar = { acucares: 0, carboidratos: 0, carnes: 0, feijoes: 0, frutas: 0, gorduras: 0, laticinios: 0, verduras: 0 };
     let ceia = { acucares: 0, carboidratos: 0, carnes: 0, feijoes: 0, frutas: 0, gorduras: 0, laticinios: 0, verduras: 0 };
+
     let acucares = [];
     let carboidratos = [];
     let carnes = [];
@@ -501,15 +504,15 @@
                     grupos = planos.planosAlimentares[i].gruposAlimentares;
 
                     // Atribui os dados das refeições às variáveis correspondentes
-                    acucares     = grupos.acucares;
+                    acucares = grupos.acucares;
                     carboidratos = grupos.carboidratos;
-                    carnes       = grupos.carnes;
-                    feijoes      = grupos.feijoes;
-                    frutas       = grupos.frutas;
-                    gorduras     = grupos.gorduras;
-                    laticinios   = grupos.laticinios;
-                    verduras     = grupos.verduras;
-                    
+                    carnes = grupos.carnes;
+                    feijoes = grupos.feijoes;
+                    frutas = grupos.frutas;
+                    gorduras = grupos.gorduras;
+                    laticinios = grupos.laticinios;
+                    verduras = grupos.verduras;
+
                     break; // Sai do loop assim que encontrar
                 }
             }
