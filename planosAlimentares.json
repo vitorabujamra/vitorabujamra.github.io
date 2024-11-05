@@ -1,0 +1,136 @@
+{
+    "planosAlimentares": [
+      {
+        "id": "VA",
+        "nome": "Vitor",
+        "refeicoes": {
+          "cafe": {
+            "acucares": 0,
+            "carboidratos": 1,
+            "carnes": 1,
+            "feijoes": 0,
+            "frutas": 0,
+            "gorduras": 1,
+            "laticinios": 1,
+            "verduras": 0
+          },
+          "colacao": {
+            "acucares": 0,
+            "carboidratos": 0,
+            "carnes": 0,
+            "feijoes": 0,
+            "frutas": 2,
+            "gorduras": 0,
+            "laticinios": 1,
+            "verduras": 0
+          },
+          "almoco": {
+            "acucares": 0,
+            "carboidratos": 2,
+            "carnes": 2,
+            "feijoes": 2,
+            "frutas": 1,
+            "gorduras": 1,
+            "laticinios": 0,
+            "verduras": "à vontade"
+          },
+          "lanche": {
+            "acucares": 0,
+            "carboidratos": 0,
+            "carnes": 1,
+            "feijoes": 0,
+            "frutas": 1,
+            "gorduras": 1,
+            "laticinios": 1,
+            "verduras": 0
+          },
+          "jantar": {
+            "acucares": 0,
+            "carboidratos": 0,
+            "carnes": 3,
+            "feijoes": 3,
+            "frutas": 1,
+            "gorduras": 0,
+            "laticinios": 0,
+            "verduras": "à vontade"
+          },
+          "ceia": {
+            "acucares": 0,
+            "carboidratos": 0,
+            "carnes": 0,
+            "feijoes": 0,
+            "frutas": 1,
+            "gorduras": 0,
+            "laticinios": 1,
+            "verduras": 0
+          }
+        }
+      },
+      {
+        "id": "CB",
+        "nome": "Carol",
+        "refeicoes": {
+          "cafe": {
+            "acucares": 1,
+            "carboidratos": 0,
+            "carnes": 0,
+            "feijoes": 0,
+            "frutas": 0,
+            "gorduras": 0,
+            "laticinios": 10,
+            "verduras": 0
+          },
+          "colacao": {
+            "acucares": 0,
+            "carboidratos": 0,
+            "carnes": 0,
+            "feijoes": 0,
+            "frutas": 2,
+            "gorduras": 0,
+            "laticinios": 1,
+            "verduras": 0
+          },
+          "almoco": {
+            "acucares": 0,
+            "carboidratos": 2,
+            "carnes": 2,
+            "feijoes": 2,
+            "frutas": 1,
+            "gorduras": 1,
+            "laticinios": 0,
+            "verduras": "à vontade"
+          },
+          "lanche": {
+            "acucares": 0,
+            "carboidratos": 0,
+            "carnes": 1,
+            "feijoes": 0,
+            "frutas": 1,
+            "gorduras": 1,
+            "laticinios": 1,
+            "verduras": 0
+          },
+          "jantar": {
+            "acucares": 0,
+            "carboidratos": 0,
+            "carnes": 3,
+            "feijoes": 3,
+            "frutas": 1,
+            "gorduras": 0,
+            "laticinios": 0,
+            "verduras": "à vontade"
+          },
+          "ceia": {
+            "acucares": 0,
+            "carboidratos": 0,
+            "carnes": 0,
+            "feijoes": 0,
+            "frutas": 1,
+            "gorduras": 0,
+            "laticinios": 1,
+            "verduras": 0
+          }
+        }
+      }
+    ]
+  }
