@@ -445,27 +445,23 @@
     </div>
 </body>
 <script>
-    
+
     var request = new XMLHttpRequest();
     // Carrega o JSON dos planos alimentares
     request.open('GET', 'planosAlimentares.json', false); // Síncrono
     request.send(null);
 
-    if (request.status === 200) {
-        let usersJson = JSON.parse(request.responseText);
 
-        const select = document.getElementById('uname');
+    let planos = JSON.parse(request.responseText);
 
-        for (let i = 0; i < usersJson.planosAlimentares.length; i++) {
-            const option = document.createElement('option');
-            option.value = usersJson.planosAlimentares[i].id; // Define o valor da opção
-            option.innerHTML = usersJson.planosAlimentares[i].nome; // Define o texto da opção
-            select.appendChild(option); // Adiciona a opção ao select
-        }
-    } else {
-        console.error("Erro ao carregar o JSON: " + request.status);
+    const select = document.getElementById('uname');
+
+    for (let i = 0; i < planos.planosAlimentares.length; i++) {
+        const option = document.createElement('option');
+        option.value = planos.planosAlimentares[i].id; // Define o valor da opção
+        option.innerHTML = planos.planosAlimentares[i].nome; // Define o texto da opção
+        select.appendChild(option); // Adiciona a opção ao select
     }
-
 
 
     let cafe = { acucares: 0, carboidratos: 0, carnes: 0, feijoes: 0, frutas: 0, gorduras: 0, laticinios: 0, verduras: 0 };
@@ -474,51 +470,6 @@
     let lanche = { acucares: 0, carboidratos: 0, carnes: 0, feijoes: 0, frutas: 0, gorduras: 0, laticinios: 0, verduras: 0 };
     let jantar = { acucares: 0, carboidratos: 0, carnes: 0, feijoes: 0, frutas: 0, gorduras: 0, laticinios: 0, verduras: 0 };
     let ceia = { acucares: 0, carboidratos: 0, carnes: 0, feijoes: 0, frutas: 0, gorduras: 0, laticinios: 0, verduras: 0 };
-
-    var request = new XMLHttpRequest();
-    // Carrega o JSON dos planos alimentares
-    request.open('GET', 'planosAlimentares.json', false); // Síncrono
-    request.send(null);
-
-    if (request.status === 200) {
-        let planos = JSON.parse(request.responseText);
-
-        // Adiciona um evento de mudança ao select
-        document.getElementById('uname').addEventListener('change', function () {
-            let selecionado = this.value; // Obtém o valor selecionado
-            let nome = '';
-            // Verifica se há um valor selecionado
-            if (selecionado) {
-                // Procura o plano correspondente
-                for (let i = 0; i < planos.planosAlimentares.length; i++) {
-                    if (planos.planosAlimentares[i].id === selecionado) {
-                        nome = planos.planosAlimentares[i].nome;
-                        // Atribui os dados das refeições às variáveis correspondentes
-                        cafe = planos.planosAlimentares[i].refeicoes.cafe;
-                        colacao = planos.planosAlimentares[i].refeicoes.colacao;
-                        almoco = planos.planosAlimentares[i].refeicoes.almoco;
-                        lanche = planos.planosAlimentares[i].refeicoes.lanche;
-                        jantar = planos.planosAlimentares[i].refeicoes.jantar;
-                        ceia = planos.planosAlimentares[i].refeicoes.ceia;
-                        break; // Sai do loop assim que encontrar
-                    }
-                }
-            } else {
-                // Se nenhum valor estiver selecionado, limpa as variáveis
-                cafe = {};
-                colacao = {};
-                almoco = {};
-                lanche = {};
-                jantar = {};
-                ceia = {};
-                console.log("Nenhum plano selecionado. Variáveis limpas.");
-            }
-        });
-    } else {
-        console.error("Erro ao carregar o JSON: " + request.status);
-    }
-
-
     let acucares = [];
     let carboidratos = [];
     let carnes = [];
@@ -527,23 +478,52 @@
     let gorduras = [];
     let laticinios = [];
     let verduras = [];
+    let grupos = [];
 
-    var request = new XMLHttpRequest();
-    // Carrega o JSON dos grupos alimentares
-    request.open('GET', 'grupoAlimentar.json', false); // Síncrono
-    request.send(null);
+    // Adiciona um evento de mudança ao select
+    document.getElementById('uname').addEventListener('change', function () {
+        let selecionado = this.value; // Obtém o valor selecionado
+        let nome = '';
+        // Verifica se há um valor selecionado
+        if (selecionado) {
+            // Procura o plano correspondente
+            for (let i = 0; i < planos.planosAlimentares.length; i++) {
+                if (planos.planosAlimentares[i].id === selecionado) {
+                    nome = planos.planosAlimentares[i].nome;
+                    // Atribui os dados das refeições às variáveis correspondentes
+                    cafe = planos.planosAlimentares[i].refeicoes.cafe;
+                    colacao = planos.planosAlimentares[i].refeicoes.colacao;
+                    almoco = planos.planosAlimentares[i].refeicoes.almoco;
+                    lanche = planos.planosAlimentares[i].refeicoes.lanche;
+                    jantar = planos.planosAlimentares[i].refeicoes.jantar;
+                    ceia = planos.planosAlimentares[i].refeicoes.ceia;
 
-    let grupos = JSON.parse(request.responseText);
+                    grupos = planos.planosAlimentares[i].gruposAlimentares;
 
-    // Atribui os dados das refeições às variáveis correspondentes
-    acucares = grupos.gruposAlimentares['acucares'];
-    carboidratos = grupos.gruposAlimentares['carboidratos'];
-    carnes = grupos.gruposAlimentares['carnes'];
-    feijoes = grupos.gruposAlimentares['feijoes'];
-    frutas = grupos.gruposAlimentares['frutas'];
-    gorduras = grupos.gruposAlimentares['gorduras'];
-    laticinios = grupos.gruposAlimentares['laticinios'];
-    verduras = grupos.gruposAlimentares['verduras'];
+                    // Atribui os dados das refeições às variáveis correspondentes
+                    acucares     = grupos.acucares;
+                    carboidratos = grupos.carboidratos;
+                    carnes       = grupos.carnes;
+                    feijoes      = grupos.feijoes;
+                    frutas       = grupos.frutas;
+                    gorduras     = grupos.gorduras;
+                    laticinios   = grupos.laticinios;
+                    verduras     = grupos.verduras;
+                    
+                    break; // Sai do loop assim que encontrar
+                }
+            }
+        } else {
+            // Se nenhum valor estiver selecionado, limpa as variáveis
+            cafe = {};
+            colacao = {};
+            almoco = {};
+            lanche = {};
+            jantar = {};
+            ceia = {};
+            console.log("Nenhum plano selecionado. Variáveis limpas.");
+        }
+    });
 
 
     $(document).ready(function () {
@@ -592,10 +572,10 @@
                             document.getElementById('div' + key).style.display = 'none'; // Oculta a div do item
                         } else {
                             // Itera sobre os gruposAlimentares do key atual
-                            for (let i = 0; i < grupos.gruposAlimentares[key].length; i++) {
+                            for (let i = 0; i < grupos[key].length; i++) {
                                 var opt = document.createElement('option');
-                                opt.value = grupos.gruposAlimentares[key][i].id; // Usa i como índice dinâmico
-                                opt.innerHTML = grupos.gruposAlimentares[key][i].tipo; // Usa i como índice dinâmico
+                                opt.value = grupos[key][i].id; // Usa i como índice dinâmico
+                                opt.innerHTML = grupos[key][i].tipo; // Usa i como índice dinâmico
                                 document.getElementById(key).appendChild(opt);
                             }
 

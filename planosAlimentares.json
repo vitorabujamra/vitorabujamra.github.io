@@ -64,6 +64,479 @@
           "laticinios": 1,
           "verduras": 0
         }
+      },
+      "gruposAlimentares": {
+        "acucares": [
+          {
+            "id": 0,
+            "tipo": "",
+            "quantidade": ""
+          },
+          {
+            "id": "1",
+            "tipo": "Chocolate amargo",
+            "quantidade": "4 quadradinhos(60g)"
+          },
+          {
+            "id": "2",
+            "tipo": "Doce de mamão",
+            "quantidade": "2 colheres de sopa"
+          },
+          {
+            "id": "3",
+            "tipo": "Geléia de frutas sem açúcar",
+            "quantidade": "1 colher de sopa"
+          },
+          {
+            "id": "4",
+            "tipo": "Mel",
+            "quantidade": "1 colher de sobremesa"
+          }
+        ],
+        "carboidratos": [
+          {
+            "id": 0,
+            "tipo": "",
+            "quantidade": ""
+          },
+          {
+            "id": "1",
+            "tipo": "Arroz cozido",
+            "quantidade": "4 colheres de sopa ou 2 de servir"
+          },
+          {
+            "id": "2",
+            "tipo": "Batata cozida",
+            "quantidade": "1 unidade e meia"
+          },
+          {
+            "id": "3",
+            "tipo": "Batata doce cozida",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": "4",
+            "tipo": "Bisnaguinha sem glúten",
+            "quantidade": "3 unidades"
+          },
+          {
+            "id": "5",
+            "tipo": "Cereal matinal",
+            "quantidade": "1 xícara de chá"
+          },
+          {
+            "id": "6",
+            "tipo": "Farinha de mandioca",
+            "quantidade": "2 colheres de sopa"
+          },
+          {
+            "id": "7",
+            "tipo": "Farinha de milho",
+            "quantidade": "2 colheres de sopa"
+          },
+          {
+            "id": "8",
+            "tipo": "Inhame cozido",
+            "quantidade": "3 colheres e meia de sopa"
+          },
+          {
+            "id": "9",
+            "tipo": "Macarrão cozido de arroz",
+            "quantidade": "3 colheres e meia de sopa"
+          },
+          {
+            "id": "10",
+            "tipo": "Mandioca",
+            "quantidade": "4 colheres de sopa"
+          },
+          {
+            "id": "11",
+            "tipo": "Milho verde",
+            "quantidade": "1 espiga"
+          },
+          {
+            "id": "12",
+            "tipo": "Nhoque de batatas",
+            "quantidade": "3 colheres de sopa"
+          },
+          {
+            "id": "13",
+            "tipo": "Pão de forma integral sem glúten",
+            "quantidade": "2 fatias"
+          },
+          {
+            "id": "14",
+            "tipo": "Pão caseiro sem glúten",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": "15",
+            "tipo": "Polenta cozida",
+            "quantidade": "3 colheres de sopa"
+          },
+          {
+            "id": "16",
+            "tipo": "Torradas de arroz",
+            "quantidade": "4 unidades"
+          },
+          {
+            "id": "17",
+            "tipo": "Tapioca",
+            "quantidade": "1 unidade"
+          }
+        ],
+        "laticinios": [
+          {
+            "id": 0,
+            "tipo": "",
+            "quantidade": ""
+          },
+          {
+            "id": "1",
+            "tipo": "Coalhada fresca",
+            "quantidade": "1 colher de sopa"
+          },
+          {
+            "id": "2",
+            "tipo": "Iogurte desnatado",
+            "quantidade": "1 unidade (200ml)"
+          },
+          {
+            "id": "3",
+            "tipo": "Leite",
+            "quantidade": "1 copo (200ml)"
+          },
+          {
+            "id": "4",
+            "tipo": "Queijo minas frescal",
+            "quantidade": "1 fatia média"
+          },
+          {
+            "id": "5",
+            "tipo": "Queijo tipo polenguinho",
+            "quantidade": "2 unidades"
+          },
+          {
+            "id": "6",
+            "tipo": "Ricota",
+            "quantidade": "1 fatia grande"
+          }
+        ],
+        "gorduras": [
+          {
+            "id": 0,
+            "tipo": "",
+            "quantidade": ""
+          },
+          {
+            "id": "1",
+            "tipo": "Azeite de oliva",
+            "quantidade": "1 colher de sopa"
+          },
+          {
+            "id": "2",
+            "tipo": "Maionese de abacate",
+            "quantidade": "1 colher de sopa"
+          },
+          {
+            "id": "3",
+            "tipo": "Óleo vegetal canola ou linhaça",
+            "quantidade": "1 colher de sopa"
+          }
+        ],
+        "carnes": [
+          {
+            "id": 0,
+            "tipo": "",
+            "quantidade": ""
+          },
+          {
+            "id": "1",
+            "tipo": "Almôndegas assadas",
+            "quantidade": "4 unidades"
+          },
+          {
+            "id": "2",
+            "tipo": "Atum",
+            "quantidade": "4 colheres de sopa"
+          },
+          {
+            "id": "3",
+            "tipo": "Bife grelhado",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": "4",
+            "tipo": "Carne assada",
+            "quantidade": "1 fatia pequena"
+          },
+          {
+            "id": "5",
+            "tipo": "Carne cozida",
+            "quantidade": "3 pedaços pequenos"
+          },
+          {
+            "id": "6",
+            "tipo": "Carne moída",
+            "quantidade": "4 colheres de sopa"
+          },
+          {
+            "id": "7",
+            "tipo": "Filé de frango grelhado",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": "8",
+            "tipo": "Hamburguer caseiro",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": "9",
+            "tipo": "Lombo de porco assado",
+            "quantidade": "1 fatia pequena"
+          },
+          {
+            "id": "10",
+            "tipo": "Ovo (cozido ou omelete simples)",
+            "quantidade": "2 unidades"
+          },
+          {
+            "id": "11",
+            "tipo": "Peixe cozido",
+            "quantidade": "1 colher de servir"
+          },
+          {
+            "id": "12",
+            "tipo": "Peixe grelhado",
+            "quantidade": "1 filé grande"
+          },
+          {
+            "id": "13",
+            "tipo": "Sardinha fresca",
+            "quantidade": "1 unidade grande"
+          },
+          {
+            "id": "14",
+            "tipo": "Sobrecoxa assada",
+            "quantidade": "1 unidade pequena"
+          }
+        ],
+        "frutas": [
+          {
+            "id": 0,
+            "tipo": "",
+            "quantidade": ""
+          },
+          {
+            "id": "1",
+            "tipo": "Abacate",
+            "quantidade": "1/4 unidade"
+          },
+          {
+            "id": "2",
+            "tipo": "Abacaxi",
+            "quantidade": "1 fatia"
+          },
+          {
+            "id": "3",
+            "tipo": "Banana prata",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": "4",
+            "tipo": "Caqui",
+            "quantidade": "1 unidade pequena"
+          },
+          {
+            "id": "5",
+            "tipo": "Damasco seco",
+            "quantidade": "2 unidades"
+          },
+          {
+            "id": "6",
+            "tipo": "Figo",
+            "quantidade": "2 unidades pequenas"
+          },
+          {
+            "id": "7",
+            "tipo": "Kiwi",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": "8",
+            "tipo": "Laranja pêra sem bagaço",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": "9",
+            "tipo": "Maçã",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": "10",
+            "tipo": "Mamão papaia",
+            "quantidade": "1/2 unidade"
+          },
+          {
+            "id": "11",
+            "tipo": "Manga",
+            "quantidade": "1/2 unidade"
+          },
+          {
+            "id": "12",
+            "tipo": "Melão",
+            "quantidade": "2 fatias pequenas"
+          },
+          {
+            "id": "13",
+            "tipo": "Morango",
+            "quantidade": "10 unidades"
+          },
+          {
+            "id": "14",
+            "tipo": "Pêra",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": "15",
+            "tipo": "Pêssego",
+            "quantidade": "1 unidade grande"
+          },
+          {
+            "id": "16",
+            "tipo": "Salada de frutas",
+            "quantidade": "1/2 xícara de chá"
+          },
+          {
+            "id": "17",
+            "tipo": "Suco de frutas (puro)",
+            "quantidade": "1/2 copo (100ml)"
+          },
+          {
+            "id": "18",
+            "tipo": "Uva fresca",
+            "quantidade": "10 unidades"
+          },
+          {
+            "id": "19",
+            "tipo": "Uva passa",
+            "quantidade": "1 colher de sopa"
+          }
+        ],
+        "feijoes": [
+          {
+            "id": 0,
+            "tipo": "",
+            "quantidade": ""
+          },
+          {
+            "id": "1",
+            "tipo": "Ervilha cozida macerada",
+            "quantidade": "3 colheres de sopa"
+          },
+          {
+            "id": "2",
+            "tipo": "Caldo de feijão cozido",
+            "quantidade": "1 concha ou 4 colheres de sopa"
+          },
+          {
+            "id": "3",
+            "tipo": "Soja cozida",
+            "quantidade": "3 colheres de sopa"
+          }
+        ],
+        "verduras": [
+          {
+            "id": 0,
+            "tipo": "",
+            "quantidade": ""
+          },
+          {
+            "id": "1",
+            "tipo": "Abobrinha cozida",
+            "quantidade": "1 colher e meia de sopa"
+          },
+          {
+            "id": "2",
+            "tipo": "Acelga",
+            "quantidade": "à vontade"
+          },
+          {
+            "id": "3",
+            "tipo": "Agrião",
+            "quantidade": "à vontade"
+          },
+          {
+            "id": "4",
+            "tipo": "Alface",
+            "quantidade": "à vontade"
+          },
+          {
+            "id": "5",
+            "tipo": "Almeirão",
+            "quantidade": "à vontade"
+          },
+          {
+            "id": "6",
+            "tipo": "Beterraba cozida",
+            "quantidade": "3 fatias"
+          },
+          {
+            "id": "7",
+            "tipo": "Beterraba crua",
+            "quantidade": "2 colheres de sopa"
+          },
+          {
+            "id": "8",
+            "tipo": "Brócolis cozido",
+            "quantidade": "4 colheres de sopa"
+          },
+          {
+            "id": "9",
+            "tipo": "Cenoura crua",
+            "quantidade": "1 colher de servir"
+          },
+          {
+            "id": "10",
+            "tipo": "Chuchu cozido",
+            "quantidade": "2 colheres e meia de sopa"
+          },
+          {
+            "id": "11",
+            "tipo": "Couve manteiga",
+            "quantidade": "6 colheres de sopa"
+          },
+          {
+            "id": "12",
+            "tipo": "Espinafre cozido",
+            "quantidade": "2 colheres e meia de sopa"
+          },
+          {
+            "id": "13",
+            "tipo": "Jiló cozido",
+            "quantidade": "1 colher e meia de sopa"
+          },
+          {
+            "id": "14",
+            "tipo": "Pepino",
+            "quantidade": "4 colheres de sopa"
+          },
+          {
+            "id": "15",
+            "tipo": "Repolho cru",
+            "quantidade": "6 colheres de sopa"
+          },
+          {
+            "id": "16",
+            "tipo": "Rúcula",
+            "quantidade": "à vontade"
+          },
+          {
+            "id": "17",
+            "tipo": "Tomate cereja",
+            "quantidade": "4 unidades"
+          }
+        ]
       }
     },
     {
@@ -130,6 +603,1054 @@
           "laticinios": 1,
           "verduras": 0
         }
+      },
+      "gruposAlimentares": {
+        "acucares": [
+          {
+            "id": 0,
+            "tipo": "",
+            "quantidade": ""
+          }
+        ],
+        "carboidratos": [
+          {
+            "id": 0,
+            "tipo": "",
+            "quantidade": ""
+          },
+          {
+            "id": 3,
+            "tipo": "Arroz Integral Cozido",
+            "quantidade": "3 colheres de sopa"
+          },
+          {
+            "id": 4,
+            "tipo": "Aveia em Flocos*",
+            "quantidade": "1 e 1/2 colher de sopa"
+          },
+          {
+            "id": 5,
+            "tipo": "Farelo de Aveia*",
+            "quantidade": "2 colheres de sopa rasas"
+          },
+          {
+            "id": 6,
+            "tipo": "Farinha de Aveia*",
+            "quantidade": "1 colher de sopa"
+          },
+          {
+            "id": 7,
+            "tipo": "Barrinhas de Cereal*",
+            "quantidade": "1/2 unidade"
+          },
+          {
+            "id": 8,
+            "tipo": "Barrinhas de Cereal Light*",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": 9,
+            "tipo": "Cará/cozido / Amassado / Purê",
+            "quantidade": "1 e 1/2 colher de sopa"
+          },
+          {
+            "id": 10,
+            "tipo": "Chia",
+            "quantidade": "15 gramas"
+          },
+          {
+            "id": 12,
+            "tipo": "Pão de Centeio*",
+            "quantidade": "1 fatia"
+          },
+          {
+            "id": 13,
+            "tipo": "Pão Multigrãos*",
+            "quantidade": "25 gramas"
+          },
+          {
+            "id": 14,
+            "tipo": "Pão árabe integral*",
+            "quantidade": "1 fatia"
+          },
+          {
+            "id": 15,
+            "tipo": "Quinoa",
+            "quantidade": "20 gramas"
+          },
+          {
+            "id": 16,
+            "tipo": "Sushi",
+            "quantidade": "1 e 2 unidades"
+          },
+          {
+            "id": 17,
+            "tipo": "Pão Matzo (com farinha integral)*",
+            "quantidade": "1 e 1/2 unidade"
+          },
+          {
+            "id": 18,
+            "tipo": "Farinha de Grão de Bico*",
+            "quantidade": "20 gramas"
+          },
+          {
+            "id": 19,
+            "tipo": "Farinha de Soja*",
+            "quantidade": "20 gramas"
+          }
+        ],
+        "laticinios": [
+          {
+            "id": 0,
+            "tipo": "",
+            "quantidade": ""
+          },
+          {
+            "id": 1,
+            "tipo": "Coalhada",
+            "quantidade": "2 e 1/2 colheres de sopa"
+          },
+          {
+            "id": 2,
+            "tipo": "Cream Cheese",
+            "quantidade": "2 colheres de sopa"
+          },
+          {
+            "id": 3,
+            "tipo": "Creme de Ricota Light",
+            "quantidade": "120 gramas"
+          },
+          {
+            "id": 4,
+            "tipo": "Iogurte Activia Light",
+            "quantidade": "2 potes"
+          },
+          {
+            "id": 5,
+            "tipo": "Iogurte Activia normal",
+            "quantidade": "1 pote"
+          },
+          {
+            "id": 6,
+            "tipo": "Iogurte de frutas",
+            "quantidade": "1 e 1/2 copo de requeijão"
+          },
+          {
+            "id": 7,
+            "tipo": "Iogurte desnatado de frutas",
+            "quantidade": "1 pote"
+          },
+          {
+            "id": 8,
+            "tipo": "Iogurte desnatado Natural",
+            "quantidade": "1 e 1/2 copo de requeijão"
+          },
+          {
+            "id": 9,
+            "tipo": "Iogurte Grego Light",
+            "quantidade": "1 e 1/2 pote"
+          },
+          {
+            "id": 10,
+            "tipo": "Iogurte Integral de Frutas",
+            "quantidade": "1 copo de requeijão"
+          },
+          {
+            "id": 11,
+            "tipo": "Iogurte Integral Natural",
+            "quantidade": "1 copo de requeijão"
+          },
+          {
+            "id": 12,
+            "tipo": "Iogurte Light",
+            "quantidade": "2 potes"
+          },
+          {
+            "id": 13,
+            "tipo": "Iogurte Molico",
+            "quantidade": "2 potes"
+          },
+          {
+            "id": 14,
+            "tipo": "Leite Baixa Lactose",
+            "quantidade": "1 copo americano"
+          },
+          {
+            "id": 15,
+            "tipo": "Leite de cabra integral",
+            "quantidade": "1 copo de requeijão"
+          },
+          {
+            "id": 16,
+            "tipo": "Leite de soja",
+            "quantidade": "1 copo americano"
+          },
+          {
+            "id": 17,
+            "tipo": "Leite desnatado",
+            "quantidade": "1 e 1/2 copo americano"
+          },
+          {
+            "id": 18,
+            "tipo": "Leite em pó desnatado",
+            "quantidade": "3 colheres de sopa"
+          },
+          {
+            "id": 19,
+            "tipo": "Leite em pó integral",
+            "quantidade": "2 colheres de sopa"
+          },
+          {
+            "id": 20,
+            "tipo": "Leite integral longa vida 3,5%",
+            "quantidade": "1 xícara de chá"
+          },
+          {
+            "id": 21,
+            "tipo": "Leite sem lactose",
+            "quantidade": "1 copo americano"
+          },
+          {
+            "id": 22,
+            "tipo": "Leite semidesnatado longa vida 2%",
+            "quantidade": "1 copo de requeijão"
+          },
+          {
+            "id": 23,
+            "tipo": "Leite tipo B 3,0% gordura - padrão",
+            "quantidade": "1 xícara de chá"
+          },
+          {
+            "id": 24,
+            "tipo": "Leite tipo C 3,5% gordura - padrão",
+            "quantidade": "1 xícara de chá"
+          },
+          {
+            "id": 25,
+            "tipo": "Polenguinho Light",
+            "quantidade": "2 e 1/2 unidades"
+          },
+          {
+            "id": 26,
+            "tipo": "Polenguinho Normal",
+            "quantidade": "2 unidades"
+          },
+          {
+            "id": 27,
+            "tipo": "Queijo Cottage",
+            "quantidade": "120 gramas"
+          },
+          {
+            "id": 28,
+            "tipo": "Queijo Minas",
+            "quantidade": "1 e 1/2 fatia"
+          },
+          {
+            "id": 29,
+            "tipo": "Queijo Mussarela",
+            "quantidade": "3 fatias"
+          },
+          {
+            "id": 30,
+            "tipo": "Queijo Parmesão",
+            "quantidade": "3 colheres de sopa"
+          },
+          {
+            "id": 31,
+            "tipo": "Queijo Pasteurizado",
+            "quantidade": "2 unidades"
+          },
+          {
+            "id": 32,
+            "tipo": "Queijo Petit suisse",
+            "quantidade": "2 potinhos"
+          },
+          {
+            "id": 33,
+            "tipo": "Queijo Prato",
+            "quantidade": "2 fatias"
+          },
+          {
+            "id": 34,
+            "tipo": "Queijo Provolone",
+            "quantidade": "1 fatia"
+          },
+          {
+            "id": 35,
+            "tipo": "Queijo Tipo Minas",
+            "quantidade": "1 e 1/2 fatia"
+          },
+          {
+            "id": 36,
+            "tipo": "Queijo Tipo Minas Frescal",
+            "quantidade": "1 fatia grande"
+          },
+          {
+            "id": 37,
+            "tipo": "Requeijão cremoso",
+            "quantidade": "1 e 1/2 colher de sopa"
+          },
+          {
+            "id": 38,
+            "tipo": "Requeijão Light",
+            "quantidade": "2 colheres de sopa"
+          },
+          {
+            "id": 39,
+            "tipo": "Ricota",
+            "quantidade": "2 fatias"
+          }
+        ],
+        "gorduras": [
+          {
+            "id": 0,
+            "tipo": "",
+            "quantidade": ""
+          },
+          {
+            "id": 1,
+            "tipo": "Castanha de Caju",
+            "quantidade": "6 unidades"
+          },
+          {
+            "id": 2,
+            "tipo": "Nozes",
+            "quantidade": "2 unidades"
+          },
+          {
+            "id": 3,
+            "tipo": "Amêndoas",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": 4,
+            "tipo": "Azeite de dendê",
+            "quantidade": "1/3 de colher de sopa"
+          },
+          {
+            "id": 5,
+            "tipo": "Azeite de oliva",
+            "quantidade": "2 colheres de chá"
+          },
+          {
+            "id": 6,
+            "tipo": "Óleo vegetal",
+            "quantidade": "2 colheres de chá"
+          },
+          {
+            "id": 7,
+            "tipo": "Óleo Vegetal composto (soja + oliva)",
+            "quantidade": "1/2 colher de sopa"
+          },
+          {
+            "id": 8,
+            "tipo": "Óleo vegetal de canola",
+            "quantidade": "1/2 colher de sopa"
+          },
+          {
+            "id": 9,
+            "tipo": "Óleo vegetal de girassol",
+            "quantidade": "1/2 colher de sopa"
+          },
+          {
+            "id": 10,
+            "tipo": "Óleo Vegetal de milho",
+            "quantidade": "1/2 colher de sopa"
+          },
+          {
+            "id": 11,
+            "tipo": "Óleo Vegetal de soja",
+            "quantidade": "1/2 colher de sopa"
+          },
+          {
+            "id": 12,
+            "tipo": "Molho Shoyo light",
+            "quantidade": "7 colheres de sopa"
+          },
+          {
+            "id": 13,
+            "tipo": "Bacon",
+            "quantidade": "1/4 de fatia"
+          },
+          {
+            "id": 14,
+            "tipo": "Banha de Porco",
+            "quantidade": "1/4 de colher de sopa"
+          },
+          {
+            "id": 15,
+            "tipo": "Creme Vegetal",
+            "quantidade": "1 colher de chá"
+          },
+          {
+            "id": 16,
+            "tipo": "Halvarina",
+            "quantidade": "1/2 colher de sopa"
+          },
+          {
+            "id": 17,
+            "tipo": "Margarina Light",
+            "quantidade": "2 colheres de chá"
+          },
+          {
+            "id": 18,
+            "tipo": "Margarina Líquida",
+            "quantidade": "2 colheres de chá"
+          },
+          {
+            "id": 19,
+            "tipo": "Margarina Vegetal",
+            "quantidade": "1 colher de chá"
+          },
+          {
+            "id": 20,
+            "tipo": "Manteiga/pasta de amendoim",
+            "quantidade": "1 colher de chá"
+          },
+          {
+            "id": 21,
+            "tipo": "Leite de Amêndoas",
+            "quantidade": "1 xícara"
+          },
+          {
+            "id": 22,
+            "tipo": "Linhaça (farinha)",
+            "quantidade": "1 colher de sopa"
+          },
+          {
+            "id": 23,
+            "tipo": "Manteiga",
+            "quantidade": "1 colher de sopa"
+          },
+          {
+            "id": 24,
+            "tipo": "Requeijão",
+            "quantidade": "2 colheres de chá"
+          },
+          {
+            "id": 25,
+            "tipo": "Requeijão Light",
+            "quantidade": "3 colheres de chá"
+          }
+        ],
+        "carnes": [
+          {
+            "id": 0,
+            "tipo": "",
+            "quantidade": ""
+          },
+          {
+            "id": 1,
+            "tipo": "Atum em Lata (conserva em água)",
+            "quantidade": "1 colher de sopa"
+          },
+          {
+            "id": 2,
+            "tipo": "Bacalhau cozido",
+            "quantidade": "1/3 de unidade"
+          },
+          {
+            "id": 3,
+            "tipo": "Barrinhas de proteína",
+            "quantidade": "1/3 de unidade"
+          },
+          {
+            "id": 4,
+            "tipo": "Bife de carne magra (maminha)",
+            "quantidade": "1/3 de unidade (25 gramas)"
+          },
+          {
+            "id": 5,
+            "tipo": "Bife empanado",
+            "quantidade": "1/3 de unidade"
+          },
+          {
+            "id": 6,
+            "tipo": "Bife grelhado",
+            "quantidade": "1/3 de unidade"
+          },
+          {
+            "id": 7,
+            "tipo": "Bife enrolado",
+            "quantidade": "1/3 de unidade"
+          },
+          {
+            "id": 8,
+            "tipo": "Bife de Fígado",
+            "quantidade": "1/3 de unidade (35 gramas)"
+          },
+          {
+            "id": 9,
+            "tipo": "Blanquet de Peru",
+            "quantidade": "3 fatias"
+          },
+          {
+            "id": 10,
+            "tipo": "Carne assada (patinho)",
+            "quantidade": "1 e 1/3 pedaços pequenos"
+          },
+          {
+            "id": 11,
+            "tipo": "Carne cozida",
+            "quantidade": "1 e 1/2 pedaços pequenos"
+          },
+          {
+            "id": 12,
+            "tipo": "Carne moída",
+            "quantidade": "2 colheres de sopa"
+          },
+          {
+            "id": 13,
+            "tipo": "Coração de Frango",
+            "quantidade": "2 unidades"
+          },
+          {
+            "id": 14,
+            "tipo": "Costela Bovina assada",
+            "quantidade": "1 pedaço pequeno"
+          },
+          {
+            "id": 15,
+            "tipo": "Espetinho de carne",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": 16,
+            "tipo": "File de Frango (peito/coxa)",
+            "quantidade": "1/3 de unidade (50 gramas)"
+          },
+          {
+            "id": 17,
+            "tipo": "Frango assado Inteiro",
+            "quantidade": "1/3 pedaço de peito ou 1/3 de coxa ou 1/3 de sobrecoxa"
+          },
+          {
+            "id": 18,
+            "tipo": "File de Frango à Milanesa",
+            "quantidade": "1/3 de unidade"
+          },
+          {
+            "id": 19,
+            "tipo": "Frango sobrecoxa cozida sem pele com molho",
+            "quantidade": "1/3 de sobrecoxa grande"
+          },
+          {
+            "id": 20,
+            "tipo": "Hambúrguer",
+            "quantidade": "1/2 unidade"
+          },
+          {
+            "id": 21,
+            "tipo": "Linguado grelhado",
+            "quantidade": "1/2 filé médio"
+          },
+          {
+            "id": 22,
+            "tipo": "Linguiça de frango",
+            "quantidade": "2 fatias finas"
+          },
+          {
+            "id": 23,
+            "tipo": "Linguiça Toscana Calabresa",
+            "quantidade": "1 fatia fina"
+          },
+          {
+            "id": 24,
+            "tipo": "Linguiça de Porco cozida",
+            "quantidade": "1/3 de gomo"
+          },
+          {
+            "id": 25,
+            "tipo": "Lombo de porco",
+            "quantidade": "1/3 de fatia"
+          },
+          {
+            "id": 26,
+            "tipo": "Manjuba/pescada",
+            "quantidade": "1 filé"
+          },
+          {
+            "id": 27,
+            "tipo": "Mortadela",
+            "quantidade": "1 fatia (20 gramas)"
+          },
+          {
+            "id": 28,
+            "tipo": "Nugget de Frango",
+            "quantidade": "1 e 1/2 unidade"
+          },
+          {
+            "id": 29,
+            "tipo": "Omelete com 1 ovo",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": 30,
+            "tipo": "Ovo cozido",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": 31,
+            "tipo": "Ovo de Codorna",
+            "quantidade": "2 unidades"
+          },
+          {
+            "id": 32,
+            "tipo": "Ovo Frito",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": 33,
+            "tipo": "Peito de Peru",
+            "quantidade": "3 fatias"
+          },
+          {
+            "id": 34,
+            "tipo": "Peixe espada cozido",
+            "quantidade": "1/3 de file"
+          },
+          {
+            "id": 35,
+            "tipo": "Peru assado sem pele",
+            "quantidade": "1/2 fatia grande"
+          },
+          {
+            "id": 36,
+            "tipo": "Presunto",
+            "quantidade": "2 fatias"
+          },
+          {
+            "id": 37,
+            "tipo": "Presunto de Peru",
+            "quantidade": "3 fatias"
+          },
+          {
+            "id": 38,
+            "tipo": "Presunto magro",
+            "quantidade": "3 fatias"
+          },
+          {
+            "id": 39,
+            "tipo": "Salame",
+            "quantidade": "4 fatias"
+          },
+          {
+            "id": 40,
+            "tipo": "Salmão",
+            "quantidade": "65 gramas"
+          },
+          {
+            "id": 41,
+            "tipo": "Salsicha",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": 42,
+            "tipo": "Salsicha de peru",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": 43,
+            "tipo": "Salsicha em conserva",
+            "quantidade": "1/3 de unidade"
+          },
+          {
+            "id": 44,
+            "tipo": "Sardinha em óleo",
+            "quantidade": "1 unidade pequena"
+          },
+          {
+            "id": 45,
+            "tipo": "Sardinha Escabeche",
+            "quantidade": "1/3 de unidade"
+          },
+          {
+            "id": 46,
+            "tipo": "Sashimi",
+            "quantidade": "6 unidades"
+          },
+          {
+            "id": 47,
+            "tipo": "Tilápia grelhada",
+            "quantidade": "1/2 filé médio"
+          },
+          {
+            "id": 48,
+            "tipo": "Whey Protein Isolado",
+            "quantidade": "12 gramas"
+          }
+        ],
+        "frutas": [
+          {
+            "id": 0,
+            "tipo": "",
+            "quantidade": ""
+          },
+          {
+            "id": 1,
+            "tipo": "Abacate",
+            "quantidade": "1 colher de sopa rasa"
+          },
+          {
+            "id": 2,
+            "tipo": "Abacaxi (em natura)",
+            "quantidade": "1/2 fatia média"
+          },
+          {
+            "id": 3,
+            "tipo": "Acerola",
+            "quantidade": "1 e 1/2 xícaras de chá"
+          },
+          {
+            "id": 4,
+            "tipo": "Ameixa Preta",
+            "quantidade": "2 unidades"
+          },
+          {
+            "id": 5,
+            "tipo": "Ameixa vermelha",
+            "quantidade": "2 unidades"
+          },
+          {
+            "id": 6,
+            "tipo": "Banana Nanica",
+            "quantidade": "1/2 unidade"
+          },
+          {
+            "id": 7,
+            "tipo": "Caqui",
+            "quantidade": "1/2 unidade"
+          },
+          {
+            "id": 8,
+            "tipo": "Cereja Fresca",
+            "quantidade": "12 unidades"
+          },
+          {
+            "id": 9,
+            "tipo": "Damasco seco",
+            "quantidade": "2 unidades"
+          },
+          {
+            "id": 10,
+            "tipo": "Goiaba",
+            "quantidade": "1/2 unidade"
+          },
+          {
+            "id": 11,
+            "tipo": "Goji Berry",
+            "quantidade": "1 colher de sobremesa"
+          },
+          {
+            "id": 12,
+            "tipo": "Kiwi",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": 13,
+            "tipo": "Laranja",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": 14,
+            "tipo": "Laranja Bahia",
+            "quantidade": "4 gomos"
+          },
+          {
+            "id": 15,
+            "tipo": "Laranja Pera/Lima",
+            "quantidade": "1/2 unidade"
+          },
+          {
+            "id": 16,
+            "tipo": "Limão",
+            "quantidade": "2 unidades"
+          },
+          {
+            "id": 17,
+            "tipo": "Maçã",
+            "quantidade": "1/2 unidade"
+          },
+          {
+            "id": 18,
+            "tipo": "Morango",
+            "quantidade": "9 unidades"
+          },
+          {
+            "id": 19,
+            "tipo": "Nectarina",
+            "quantidade": "1 unidade"
+          },
+          {
+            "id": 20,
+            "tipo": "Pêra",
+            "quantidade": "1/2 unidade"
+          },
+          {
+            "id": 21,
+            "tipo": "Pêssego",
+            "quantidade": "1 unidade pequena"
+          },
+          {
+            "id": 22,
+            "tipo": "Salada de Frutas (banana/maçã/laranja)",
+            "quantidade": "1/4 de xícara de chá"
+          },
+          {
+            "id": 23,
+            "tipo": "Tamarindo",
+            "quantidade": "6 unidades"
+          },
+          {
+            "id": 24,
+            "tipo": "Tangerina/Mexerica",
+            "quantidade": "6 gomos"
+          },
+          {
+            "id": 25,
+            "tipo": "Uva comum",
+            "quantidade": "11 grãos"
+          },
+          {
+            "id": 26,
+            "tipo": "Uva Itália",
+            "quantidade": "4 grãos"
+          },
+          {
+            "id": 27,
+            "tipo": "Uva Rubi",
+            "quantidade": "4 uvas"
+          }
+        ],
+        "feijoes": [
+          {
+            "id": 0,
+            "tipo": "",
+            "quantidade": ""
+          },
+          {
+            "id": 1,
+            "tipo": "Ervilha cozida",
+            "quantidade": "1 colher de sopa"
+          },
+          {
+            "id": 2,
+            "tipo": "Feijão + Caldo",
+            "quantidade": "1 colher de sopa"
+          },
+          {
+            "id": 3,
+            "tipo": "Feijão Branco Cozido",
+            "quantidade": "1/2 colher de sopa"
+          },
+          {
+            "id": 4,
+            "tipo": "Feijão Cozido (50% de caldo)",
+            "quantidade": "1/2 concha"
+          },
+          {
+            "id": 5,
+            "tipo": "Feijão Cozido (somente grãos)",
+            "quantidade": "1 colher e 1/2 de sopa"
+          },
+          {
+            "id": 6,
+            "tipo": "Feijão Preto cozido",
+            "quantidade": "1/2 concha média rasa"
+          },
+          {
+            "id": 7,
+            "tipo": "Grão de Bico",
+            "quantidade": "1 colher de sopa rasa"
+          },
+          {
+            "id": 8,
+            "tipo": "Grão de bico cozido",
+            "quantidade": "1/2 colher de sopa"
+          },
+          {
+            "id": 9,
+            "tipo": "Lentilha cozida",
+            "quantidade": "1 colher de sopa rasa"
+          },
+          {
+            "id": 10,
+            "tipo": "Soja Cozida",
+            "quantidade": "1 colher de sopa rasa"
+          }
+        ],
+        "verduras": [
+          {
+            "id": 0,
+            "tipo": "",
+            "quantidade": ""
+          },
+          {
+            "id": 1,
+            "tipo": "Abobrinha Cozida",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 2,
+            "tipo": "Acelga Cozida",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 3,
+            "tipo": "Acelga Crua - picada",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 4,
+            "tipo": "Agrião",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 5,
+            "tipo": "Aipo Cru",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 6,
+            "tipo": "Alcachofra Cozida",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 7,
+            "tipo": "Alface",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 8,
+            "tipo": "Almeirão",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 9,
+            "tipo": "Berinjela Cozida",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 10,
+            "tipo": "Beterraba Refogada",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 11,
+            "tipo": "Beterraba Crua Ralada",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 12,
+            "tipo": "Brócolis Cozido",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 13,
+            "tipo": "Cenoura Crua Picada",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 14,
+            "tipo": "Chuchu Cozido",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 15,
+            "tipo": "Couve Manteiga Cozida",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 16,
+            "tipo": "Couve Flor Cozida",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 17,
+            "tipo": "Ervilha Fresca",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 18,
+            "tipo": "Ervilha Torta (vagem)",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 19,
+            "tipo": "Espinafre Cozido",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 20,
+            "tipo": "Mostarda",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 21,
+            "tipo": "Palmito em Conserva",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 22,
+            "tipo": "Pepino Japonês",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 23,
+            "tipo": "Pepino Picado",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 24,
+            "tipo": "Rabanete",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 25,
+            "tipo": "Repolho Branco",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 26,
+            "tipo": "Repolho Branco Cru",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 27,
+            "tipo": "Repolho Cozido",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 28,
+            "tipo": "Repolho Picado",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 29,
+            "tipo": "Repolho Roxo Cru",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 30,
+            "tipo": "Rúcula",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 31,
+            "tipo": "Salsão Cru",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 32,
+            "tipo": "Tomate Cereja",
+            "quantidade": "À vontade"
+          },
+          {
+            "id": 33,
+            "tipo": "Vagem Cozida",
+            "quantidade": "À vontade"
+          }
+        ]
       }
     }
   ]
